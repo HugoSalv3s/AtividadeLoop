@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Jogo de adivinhação</h1>
+
+
+<p>Numero Escolhido <span id="numeroEscolhido"></span></p>
+<p>Numero Tentativas <span id="numeroTentativas"></span></p>
+
+    <script>
+
+ 
+    let tentativas = 0;
+    let numeroChutado;
+    let mensagem;
+    let numeroEscolhido = prompt("Jogador 1, Escolha um numero entre 1 e 10")
+ 
+
+
+    while (true) {
+        numeroChutado = Number(prompt("Jogador 2, chute um número entre 1 e 10:"));
+        tentativas++;
+ 
+        if (numeroChutado == numeroEscolhido) {
+            mensagem = "Parabéns! Você acertou o número " + numeroEscolhido + " em " + tentativas + " tentativas.";
+            
+            alert(mensagem);
+            break;
+        } else if (numeroChutado < numeroEscolhido) {
+            mensagem = "Tente um número maior.";
+        } else {
+            mensagem = "Tente um número menor.";
+        }
+ 
+       
+        
+        alert(mensagem);
+    }
+
+
+document.getElementById("numeroEscolhido").innerHTML = numeroEscolhido
+document.getElementById("numeroTentativas").innerHTML = tentativas
+
+ 
+jogoDeAdivinhacao();
+ 
+ 
+    </script>
+</body>
+</html>
